@@ -2,13 +2,13 @@ const squares = document.querySelectorAll(".square");
 const numSquares = squares.length;
 
 const numberBtns = document.querySelectorAll(".numbers > button");
-const solveBtn = document.querySelector("#solve");
-const undoBtn = document.querySelector("#undo");
-const clearBtn = document.querySelector("#clear");
+const solveBtn = document.querySelector(".solve");
+const undoBtn = document.querySelector(".undo");
+const clearBtn = document.querySelector(".clear");
 
 const popup = document.querySelector(".popup"); 
 const cover = document.querySelector(".cover")
-const closePopup = document.querySelector("#close-popup");
+const closePopup = document.querySelector(".close-popup");
 
 var board = [["", "" , "", "", "", "", "", "", ""],
              ["", "" , "", "", "", "", "", "", ""],
@@ -21,7 +21,7 @@ var board = [["", "" , "", "", "", "", "", "", ""],
              ["", "" , "", "", "", "", "", "", ""]];
 
 for (var i = 0; i < numSquares; i++) {
-    squares[i].addEventListener("click", function() {
+    squares[i].addEventListener("click", (event) => {
         var prev = document.querySelector(".selected");
         prev.classList.remove("selected");
 
@@ -29,32 +29,32 @@ for (var i = 0; i < numSquares; i++) {
             prev.classList.add("filled");
         }
 
-        this.classList.add("selected");
+        event.currentTarget.classList.add("selected");
     })
 }
 
 function getCoordinates(classLst) {
     const classes = Array.from(classLst);
-    const row = classes.find(name => name.includes("row")).slice(-1,);
-    const col = classes.find(name => name.includes("col")).slice(-1,);
+    const row = classes.find((name) => name.includes("row")).slice(-1,);
+    const col = classes.find((name) => name.includes("col")).slice(-1,);
     return [row, col];
 }
 
 for (var i = 0; i < 9; i++) {
-    numberBtns[i].addEventListener("click", function() {
-        document.querySelector(".selected > p").textContent = this.textContent;
+    numberBtns[i].addEventListener("click", (event) => {
+        document.querySelector(".selected > p").textContent = event.currentTarget.textContent;
         const pos = getCoordinates(document.querySelector(".selected").classList);
-        board[pos[0]][pos[1]] = this.textContent;
+        board[pos[0]][pos[1]] = event.currentTarget.textContent;
     })
 }
 
-undoBtn.addEventListener("click", function() {
+undoBtn.addEventListener("click", () => {
     document.querySelector(".selected > p").textContent = "";
     const pos = getCoordinates(document.querySelector(".selected").classList);
     board[pos[0]][pos[1]] = "";
 })
 
-clearBtn.addEventListener("click", function() {
+clearBtn.addEventListener("click", () => {
     const filledSquares = document.querySelectorAll(".filled");
     const numFilled = filledSquares.length;
     for (var i = 0; i < numFilled; i++) {
@@ -72,7 +72,7 @@ clearBtn.addEventListener("click", function() {
     }
 })
 
-solveBtn.addEventListener("click", function() {
+solveBtn.addEventListener("click", () => {
     if (solveSudoku()) {
         // Display the result on the board
         for (var i = 0; i < numSquares; i++) {
@@ -86,7 +86,7 @@ solveBtn.addEventListener("click", function() {
     }
 });
 
-closePopup.addEventListener("click", function() {
+closePopup.addEventListener("click", () => {
     popup.classList.remove("active-popup");
     cover.classList.remove("active-cover");
 })

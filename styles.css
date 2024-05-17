@@ -1,59 +1,23 @@
-h1 {
-    font-family: "Libre Baskerville", serif;
-    font-weight: 750;
-    font-style: normal;
-    font-size: 50px;
-    margin: 25px;
-}
-
-.instructions {
-    margin: 25px;
-    padding-bottom: 15px;
-}
+/* Sudoku Board */
 
 .game {
     display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
     justify-content: center;
-    gap: 50px;
-}
-
-@media (max-width: 770px) {
-    .game {
-        flex-direction: column;
-        align-items: center;
-    }
-    .numbers {
-        margin-bottom: 25px;
-    }
+    margin: 2.5rem;
 }
 
 .board {
     display: grid;
-    grid-template-rows: 54.5px 50px 50px 52.5px 50px 50px 52.5px 50px 50px;
-    grid-template-columns: 54.5px 50px 50px 52.5px 50px 50px 52.5px 50px 50px;
-    gap: 0px;
+    grid-template-rows: 54.5px 50px 50px 52.5px 50px 50px 52.5px 50px 54.5px;
+    grid-template-columns: 54.5px 50px 50px 52.5px 50px 50px 52.5px 50px 54.5px;
 }
 
 .square {
-    width: 50px;
-    height: 50px;
     border: 0.5px gray solid;
-}
-
-.outer-top {
-    border-top: 5px black solid;
-}
-
-.outer-left {
-    border-left: 5px black solid;
-}
-
-.outer-right {
-    border-right: 5px black solid;
-}
-
-.outer-bottom {
-    border-bottom: 5px black solid;
+    height: 50px;
+    width: 50px;
 }
 
 .inner-top {
@@ -72,6 +36,79 @@ h1 {
     border-bottom: 3px gray solid;
 }
 
+@media (max-width: 499px) {
+    .game {
+        gap: 2rem;
+        margin: 1.5rem;
+    }
+
+    .board {
+        grid-template-rows: 44.5px 40px 40px 42.5px 40px 40px 42.5px 40px 44.5px;
+        grid-template-columns: 44.5px 40px 40px 42.5px 40px 40px 42.5px 40px 44.5px;
+    }
+
+    .square {
+        height: 40px;
+        width: 40px;
+    }
+
+    .inner-top {
+        border-top: 2px gray solid;
+    }
+    
+    .inner-left {
+        border-left: 2px gray solid;
+    }
+    
+    .inner-right {
+        border-right: 2px gray solid;
+    }
+    
+    .inner-bottom {
+        border-bottom: 2px gray solid;
+    }
+}
+
+@media (max-width: 400px) {
+    .board {
+        grid-template-rows: 39.5px 35px 35px 37.5px 35px 35px 37.5px 35px 39.5px;
+        grid-template-columns: 39.5px 35px 35px 37.5px 35px 35px 37.5px 35px 39.5px;
+    }
+
+    .square {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media (max-width: 330px) {
+    .board {
+        grid-template-rows: 34.5px 30px 30px 32.5px 30px 30px 32.5px 30px 34.5px;
+        grid-template-columns: 34.5px 30px 30px 32.5px 30px 30px 32.5px 30px 34.5px;
+    }
+
+    .square {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.outer-top {
+    border-top: 5px black solid;
+}
+
+.outer-left {
+    border-left: 5px black solid;
+}
+
+.outer-right {
+    border-right: 5px black solid;
+}
+
+.outer-bottom {
+    border-bottom: 5px black solid;
+}
+
 .filled {
     background-color: #ced4da85;
 }
@@ -80,24 +117,40 @@ h1 {
     background-color: #97dffc;
 }
 
-p, .operations > button, .numbers > button {
+/* Buttons and Text */
+
+h1 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    margin: 1.5rem;
+}
+
+.instructions {
+    margin: 1.5rem;
+    padding: 0px;
+}
+
+p,
+.operations > button,
+.numbers > button {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+    font-variation-settings: "wdth" 100;
+    font-weight: 400;
   }
 
 .square > p, .numbers > button {
-    text-align: center;
-    font-weight: 700;
     font-size: 35px;
+    font-weight: 700;
     margin: 0px;
+    text-align: center;
 }
 
 .buttons {
-    align-self: center; 
+    align-self: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -109,43 +162,135 @@ p, .operations > button, .numbers > button {
 }
 
 .operations > button {
+    background-color: #ced4da85;
     border: none;
     border-radius: 5px;
+    font-size: 17px;
     height: 40px;
     width: 70px;
-    background-color: #ced4da85;
-    font-size: 17px;
 }
 
 .numbers {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .numbers > button {
+    background-color: #ced4da85;
     border: none;
     border-radius: 5px;
     height: 70px;
     width: 70px;
-    background-color: #ced4da85;
 }
 
+@media (max-width: 499px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 55px;
+        text-align: center;
+    }
+
+    .instructions {
+        display: none;
+    }
+
+    .square > p, .numbers > button {
+        font-size: 25px;
+        margin-top: 3px;
+    }
+
+    .buttons {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .operations {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .operations > button {
+        height: 40px;
+        width: 70px;
+    }
+
+    .numbers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: safe center;
+    }
+
+    .numbers > button {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .square > p, .numbers > button {
+        font-size: 20px;
+    }
+
+    .operations > button {
+        font-size: 15px;
+        width: 60px;
+    }
+
+    .numbers > button {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 330px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .square > p, .numbers > button {
+        margin-top: 0px;
+    }
+
+    .numbers > button {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+@media ((max-width: 499px) and (min-height: 750px)),
+((max-width: 400px) and (min-height: 700px)),
+((max-width: 330px) and (min-height: 630px)) {
+    .container {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        margin-top: 2.5rem;
+    }
+}
+
+/* Popup */
+
 .popup {
-    border: 3px solid #ef233c;
-    border-radius: 5px;
-    z-index: 1;
-    background-color: #ec8385;
-    width: 220px;
-    height: 100px;
     position: fixed;
     top: 50%;
     left: 50%;
+    background-color: #ec8385;
+    border: 3px solid #ef233c;
+    border-radius: 5px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     transform: translate(-50%, -50%) scale(0);
     transition: 150ms ease-in-out; 
+    z-index: 1;
+    height: 100px;
+    width: 220px;
 }
 
 .active-popup {
@@ -160,26 +305,26 @@ p, .operations > button, .numbers > button {
     margin-left: 33px;
 }
 
-#close-popup {
+.close-popup {
+    background-color: #ec8385;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 550;
     height: 30px;
     width: 30px;
-    font-size: 25px;
-    border: none;
-    background-color: #ec8385;
-    color: white;
-    font-weight: 550;
 }
 
 .cover {
-    opacity: 0;
     position: fixed;
-    top: 0;
     bottom: 0;
     left: 0;
+    top: 0;
     right: 0;
     background-color: #ced4da80;
+    opacity: 0;
     pointer-events: none;
-    transition: 150ms ease-in-out; 
+    transition: 150ms ease-in-out;
 }
 
 .active-cover {

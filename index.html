@@ -8,159 +8,170 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,
+wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,
+wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,
+400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:
+ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Sudoku Solver</h1>
-    <p class="instructions">Please add the known valid numbers by clicking a square and then selecting a number.</p>
+    <div class="container">
+        <div class="all-content">
+            <h1>Sudoku Solver</h1>
+            <p class="instructions">
+                Please add the known valid numbers by clicking a square and then 
+                selecting a number.
+            </p>
 
-    <div class="game">
-        <div class="board">
-            <!-- First Row -->
-            <div class="square row-0 col-0 outer-top outer-left selected"><p></p></div>
-            <div class="square row-0 col-1 outer-top"><p></p></div>
-            <div class="square row-0 col-2 outer-top inner-right"><p></p></div>
+            <div class="game">
+                <div class="board">
+                    <!-- First Row -->
+                    <div class="square row-0 col-0 outer-top outer-left selected"><p></p></div>
+                    <div class="square row-0 col-1 outer-top"><p></p></div>
+                    <div class="square row-0 col-2 outer-top inner-right"><p></p></div>
 
-            <div class="square row-0 col-3 outer-top inner-left"><p></p></div>
-            <div class="square row-0 col-4 outer-top"><p></p></div>
-            <div class="square row-0 col-5 outer-top inner-right"><p></p></div>
+                    <div class="square row-0 col-3 outer-top inner-left"><p></p></div>
+                    <div class="square row-0 col-4 outer-top"><p></p></div>
+                    <div class="square row-0 col-5 outer-top inner-right"><p></p></div>
 
-            <div class="square row-0 col-6 outer-top inner-left"><p></p></div>
-            <div class="square row-0 col-7 outer-top"><p></p></div>
-            <div class="square row-0 col-8 outer-top outer-right"><p></p></div>
+                    <div class="square row-0 col-6 outer-top inner-left"><p></p></div>
+                    <div class="square row-0 col-7 outer-top"><p></p></div>
+                    <div class="square row-0 col-8 outer-top outer-right"><p></p></div>
 
-            <!-- Second Row -->
-            <div class="square row-1 col-0 outer-left"><p></p></div>
-            <div class="square row-1 col-1"><p></p></div>
-            <div class="square row-1 col-2 inner-right"><p></p></div>
+                    <!-- Second Row -->
+                    <div class="square row-1 col-0 outer-left"><p></p></div>
+                    <div class="square row-1 col-1"><p></p></div>
+                    <div class="square row-1 col-2 inner-right"><p></p></div>
 
-            <div class="square row-1 col-3 inner-left"><p></p></div>
-            <div class="square row-1 col-4"><p></p></div>
-            <div class="square row-1 col-5 inner-right"><p></p></div>
+                    <div class="square row-1 col-3 inner-left"><p></p></div>
+                    <div class="square row-1 col-4"><p></p></div>
+                    <div class="square row-1 col-5 inner-right"><p></p></div>
 
-            <div class="square row-1 col-6 inner-left"><p></p></div>
-            <div class="square row-1 col-7"><p></p></div>
-            <div class="square row-1 col-8 outer-right"><p></p></div>
+                    <div class="square row-1 col-6 inner-left"><p></p></div>
+                    <div class="square row-1 col-7"><p></p></div>
+                    <div class="square row-1 col-8 outer-right"><p></p></div>
 
-            <!-- Third Row -->
-            <div class="square row-2 col-0 outer-left inner-bottom"><p></p></div>
-            <div class="square row-2 col-1 inner-bottom"><p></p></div>
-            <div class="square row-2 col-2 inner-right inner-bottom"><p></p></div>
+                    <!-- Third Row -->
+                    <div class="square row-2 col-0 outer-left inner-bottom"><p></p></div>
+                    <div class="square row-2 col-1 inner-bottom"><p></p></div>
+                    <div class="square row-2 col-2 inner-right inner-bottom"><p></p></div>
 
-            <div class="square row-2 col-3 inner-bottom inner-left"><p></p></div>
-            <div class="square row-2 col-4 inner-bottom"><p></p></div>
-            <div class="square row-2 col-5 inner-right inner-bottom"><p></p></div>
+                    <div class="square row-2 col-3 inner-bottom inner-left"><p></p></div>
+                    <div class="square row-2 col-4 inner-bottom"><p></p></div>
+                    <div class="square row-2 col-5 inner-right inner-bottom"><p></p></div>
 
-            <div class="square row-2 col-6 inner-bottom inner-left"><p></p></div>
-            <div class="square row-2 col-7 inner-bottom"><p></p></div>
-            <div class="square row-2 col-8 outer-right inner-bottom"><p></p></div>
+                    <div class="square row-2 col-6 inner-bottom inner-left"><p></p></div>
+                    <div class="square row-2 col-7 inner-bottom"><p></p></div>
+                    <div class="square row-2 col-8 outer-right inner-bottom"><p></p></div>
 
-            <!-- Fourth Row -->
-            <div class="square row-3 col-0 outer-left inner-top"><p></p></div>
-            <div class="square row-3 col-1 inner-top"><p></p></div>
-            <div class="square row-3 col-2 inner-right inner-top"><p></p></div>
+                    <!-- Fourth Row -->
+                    <div class="square row-3 col-0 outer-left inner-top"><p></p></div>
+                    <div class="square row-3 col-1 inner-top"><p></p></div>
+                    <div class="square row-3 col-2 inner-right inner-top"><p></p></div>
 
-            <div class="square row-3 col-3 inner-left inner-top"><p></p></div>
-            <div class="square row-3 col-4 inner-top"><p></p></div>
-            <div class="square row-3 col-5 inner-right inner-top"><p></p></div>
+                    <div class="square row-3 col-3 inner-left inner-top"><p></p></div>
+                    <div class="square row-3 col-4 inner-top"><p></p></div>
+                    <div class="square row-3 col-5 inner-right inner-top"><p></p></div>
 
-            <div class="square row-3 col-6 inner-left inner-top"><p></p></div>
-            <div class="square row-3 col-7 inner-top"><p></p></div>
-            <div class="square row-3 col-8 outer-right inner-top"><p></p></div>
+                    <div class="square row-3 col-6 inner-left inner-top"><p></p></div>
+                    <div class="square row-3 col-7 inner-top"><p></p></div>
+                    <div class="square row-3 col-8 outer-right inner-top"><p></p></div>
 
-            <!-- Fifth Row -->
-            <div class="square row-4 col-0 outer-left"><p></p></div>
-            <div class="square row-4 col-1"><p></p></div>
-            <div class="square row-4 col-2 inner-right"><p></p></div>
+                    <!-- Fifth Row -->
+                    <div class="square row-4 col-0 outer-left"><p></p></div>
+                    <div class="square row-4 col-1"><p></p></div>
+                    <div class="square row-4 col-2 inner-right"><p></p></div>
 
-            <div class="square row-4 col-3 inner-left"><p></p></div>
-            <div class="square row-4 col-4"><p></p></div>
-            <div class="square row-4 col-5 inner-right"><p></p></div>
+                    <div class="square row-4 col-3 inner-left"><p></p></div>
+                    <div class="square row-4 col-4"><p></p></div>
+                    <div class="square row-4 col-5 inner-right"><p></p></div>
 
-            <div class="square row-4 col-6 inner-left"><p></p></div>
-            <div class="square row-4 col-7"><p></p></div>
-            <div class="square row-4 col-8 outer-right"><p></p></div>
+                    <div class="square row-4 col-6 inner-left"><p></p></div>
+                    <div class="square row-4 col-7"><p></p></div>
+                    <div class="square row-4 col-8 outer-right"><p></p></div>
 
-            <!-- Sixth Row -->
-            <div class="square row-5 col-0 outer-left inner-bottom"><p></p></div>
-            <div class="square row-5 col-1 inner-bottom"><p></p></div>
-            <div class="square row-5 col-2 inner-right inner-bottom"><p></p></div>
+                    <!-- Sixth Row -->
+                    <div class="square row-5 col-0 outer-left inner-bottom"><p></p></div>
+                    <div class="square row-5 col-1 inner-bottom"><p></p></div>
+                    <div class="square row-5 col-2 inner-right inner-bottom"><p></p></div>
 
-            <div class="square row-5 col-3 inner-bottom inner-left"><p></p></div>
-            <div class="square row-5 col-4 inner-bottom"><p></p></div>
-            <div class="square row-5 col-5 inner-right inner-bottom"><p></p></div>
+                    <div class="square row-5 col-3 inner-bottom inner-left"><p></p></div>
+                    <div class="square row-5 col-4 inner-bottom"><p></p></div>
+                    <div class="square row-5 col-5 inner-right inner-bottom"><p></p></div>
 
-            <div class="square row-5 col-6 inner-bottom inner-left"><p></p></div>
-            <div class="square row-5 col-7 inner-bottom"><p></p></div>
-            <div class="square row-5 col-8 outer-right inner-bottom"><p></p></div>
+                    <div class="square row-5 col-6 inner-bottom inner-left"><p></p></div>
+                    <div class="square row-5 col-7 inner-bottom"><p></p></div>
+                    <div class="square row-5 col-8 outer-right inner-bottom"><p></p></div>
 
-            <!-- Seventh Row -->
-            <div class="square row-6 col-0 outer-left inner-top"><p></p></div>
-            <div class="square row-6 col-1 inner-top"><p></p></div>
-            <div class="square row-6 col-2 inner-right inner-top"><p></p></div>
+                    <!-- Seventh Row -->
+                    <div class="square row-6 col-0 outer-left inner-top"><p></p></div>
+                    <div class="square row-6 col-1 inner-top"><p></p></div>
+                    <div class="square row-6 col-2 inner-right inner-top"><p></p></div>
 
-            <div class="square row-6 col-3 inner-left inner-top"><p></p></div>
-            <div class="square row-6 col-4 inner-top"><p></p></div>
-            <div class="square row-6 col-5 inner-right inner-top"><p></p></div>
+                    <div class="square row-6 col-3 inner-left inner-top"><p></p></div>
+                    <div class="square row-6 col-4 inner-top"><p></p></div>
+                    <div class="square row-6 col-5 inner-right inner-top"><p></p></div>
 
-            <div class="square row-6 col-6 inner-left inner-top"><p></p></div>
-            <div class="square row-6 col-7 inner-top"><p></p></div>
-            <div class="square row-6 col-8 outer-right inner-top"><p></p></div>
+                    <div class="square row-6 col-6 inner-left inner-top"><p></p></div>
+                    <div class="square row-6 col-7 inner-top"><p></p></div>
+                    <div class="square row-6 col-8 outer-right inner-top"><p></p></div>
 
-            <!-- Eigth Row -->
-            <div class="square row-7 col-0 outer-left"><p></p></div>
-            <div class="square row-7 col-1"><p></p></div>
-            <div class="square row-7 col-2 inner-right"><p></p></div>
+                    <!-- Eigth Row -->
+                    <div class="square row-7 col-0 outer-left"><p></p></div>
+                    <div class="square row-7 col-1"><p></p></div>
+                    <div class="square row-7 col-2 inner-right"><p></p></div>
 
-            <div class="square row-7 col-3 inner-left"><p></p></div>
-            <div class="square row-7 col-4"><p></p></div>
-            <div class="square row-7 col-5 inner-right"><p></p></div>
+                    <div class="square row-7 col-3 inner-left"><p></p></div>
+                    <div class="square row-7 col-4"><p></p></div>
+                    <div class="square row-7 col-5 inner-right"><p></p></div>
 
-            <div class="square row-7 col-6 inner-left"><p></p></div>
-            <div class="square row-7 col-7"><p></p></div>
-            <div class="square row-7 col-8 outer-right"><p></p></div>
+                    <div class="square row-7 col-6 inner-left"><p></p></div>
+                    <div class="square row-7 col-7"><p></p></div>
+                    <div class="square row-7 col-8 outer-right"><p></p></div>
 
-            <!-- Ninth Row -->
-            <div class="square row-8 col-0 outer-bottom outer-left"><p></p></div>
-            <div class="square row-8 col-1 outer-bottom"><p></p></div>
-            <div class="square row-8 col-2 outer-bottom inner-right"><p></p></div>
+                    <!-- Ninth Row -->
+                    <div class="square row-8 col-0 outer-bottom outer-left"><p></p></div>
+                    <div class="square row-8 col-1 outer-bottom"><p></p></div>
+                    <div class="square row-8 col-2 outer-bottom inner-right"><p></p></div>
 
-            <div class="square row-8 col-3 outer-bottom inner-left"><p></p></div>
-            <div class="square row-8 col-4 outer-bottom"><p></p></div>
-            <div class="square row-8 col-5 outer-bottom inner-right"><p></p></div>
+                    <div class="square row-8 col-3 outer-bottom inner-left"><p></p></div>
+                    <div class="square row-8 col-4 outer-bottom"><p></p></div>
+                    <div class="square row-8 col-5 outer-bottom inner-right"><p></p></div>
 
-            <div class="square row-8 col-6 outer-bottom inner-left"><p></p></div>
-            <div class="square row-8 col-7 outer-bottom"><p></p></div>
-            <div class="square row-8 col-8 outer-bottom outer-right"><p></p></div>
-        </div>
-        
-        <div class="buttons">
-            <div class="operations">
-                <button id="solve">Solve</button>
-                <button id="undo">Undo</button>
-                <button id="clear">Clear</button>
-            </div>
+                    <div class="square row-8 col-6 outer-bottom inner-left"><p></p></div>
+                    <div class="square row-8 col-7 outer-bottom"><p></p></div>
+                    <div class="square row-8 col-8 outer-bottom outer-right"><p></p></div>
+                </div>
+                
+                <div class="buttons">
+                    <div class="operations">
+                        <button class="solve">Solve</button>
+                        <button class="undo">Undo</button>
+                        <button class="clear">Clear</button>
+                    </div>
 
-            <div class="numbers">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
+                    <div class="numbers">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="popup">
         <p>No solution exists.</p>
-        <button id="close-popup">&times;</button>
+        <button class="close-popup">&times;</button>
     </div>
     <div class="cover"></div>
 
