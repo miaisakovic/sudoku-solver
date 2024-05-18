@@ -24,10 +24,10 @@ var board = [
 
 for (var i = 0; i < numSquares; i++) {
   squares[i].addEventListener("click", (event) => {
-    var prev = document.querySelector(".selected");
+    const prev = document.querySelector(".selected");
     prev.classList.remove("selected");
 
-    if (prev.textContent != "") {
+    if (!isNaN(parseInt(prev.textContent))) {
       prev.classList.add("filled");
     }
 
@@ -53,7 +53,9 @@ for (var i = 0; i < 9; i++) {
 
 undoBtn.addEventListener("click", () => {
   document.querySelector(".selected > p").textContent = "";
-  const pos = getCoordinates(document.querySelector(".selected").classList);
+  const selectedSquareClasses = document.querySelector(".selected").classList; 
+  selectedSquareClasses.remove("filled");
+  const pos = getCoordinates(selectedSquareClasses);
   board[pos[0]][pos[1]] = "";
 });
 
