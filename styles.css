@@ -113,6 +113,10 @@
   background-color: #ced4da85;
 }
 
+.invalid {
+  background-color: #ec8385;
+}
+
 .selected {
   background-color: #97dffc;
 }
